@@ -99,8 +99,7 @@ public class MovieServiceImpl implements MovieService {
 
 	@Override
 	public List<Movie> getMovieByName(String movieName) {
-		log.info("Getting movie by name");
-		return movieRepo.findByMovieName(movieName);
+ 		return movieRepo.findByName(movieName);
 	}
 
 	@Override
