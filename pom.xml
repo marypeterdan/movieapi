@@ -28,11 +28,16 @@
 		</dependency>
 
 		<!-- add dependency for mysql -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.28</version>
-		</dependency>
+
+		
+		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+ 
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.33</version>
+    <scope>runtime</scope>
+</dependency>
 <!-- add dependency for fasterxml -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

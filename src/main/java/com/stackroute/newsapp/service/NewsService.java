@@ -29,44 +29,73 @@ public class NewsService {
 
     //  getNews which returns the list of articles
     // https://newsapi.org/v2/top-headlines?country=us&apiKey=7f118af83e1b48f6939fc5096e89fd22
+    // use the below import to use the @Autowired annotation
+    @Autowired
+    private ArticleRepo articleRepo;
 
-
-    public String getNews()
-    {
+    public String getNews() {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-Api-Key", "7f118af83e1b48f6939fc5096e89fd22");
         HttpEntity<String> entity = new HttpEntity<String>(headers);
         ResponseEntity<String> response = restTemplate.exchange("https://newsapi.org/v2/top-headlines?country=us&apiKey=7f118af83e1b48f6939fc5096e89fd22", HttpMethod.GET, entity, String.class);
         String result = response.getBody();
-//convert result string into json object
-
- //use JSONObject to convert json to java object
-
-
-
-
-
-
-
-
-        return  result;
-//        ObjectMapper mapper = new ObjectMapper();
-//        Article[] articles = null;
-//        try {
-//            articles = mapper.readValue(result, Article[].class);
-//            System.out.println(articles);
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//        List<Article> articleList = new ArrayList<Article>();
-//        if (articles != null) {
-//            for (Article article : articles) {
-//                articleList.add(article);
-//            }
-//        }
-//
-//        return articleList;
+        return result;
+        
+        // ObjectMapper mapper = new ObjectMapper();
+        // Article[] articles = null;
+        // try {
+        //     articles = mapper.readValue(result, Article[].class);
+        //     System.out.println(articles);
+        // } catch (Exception e) {
+        //     System.out.println(e);
+        // }
+        // List<Article> articleList = new ArrayList<Article>();
+        // if (articles != null) {
+        //     for (Article article : articles) {
+        //         articleList.add(article);
+        //     }
+        // }
+        // return articleList;
     }
+
+
+//     public String getNews()
+//     {
+//         RestTemplate restTemplate = new RestTemplate();
+//         HttpHeaders headers = new HttpHeaders();
+//         headers.set("X-Api-Key", "7f118af83e1b48f6939fc5096e89fd22");
+//         HttpEntity<String> entity = new HttpEntity<String>(headers);
+//         ResponseEntity<String> response = restTemplate.exchange("https://newsapi.org/v2/top-headlines?country=us&apiKey=7f118af83e1b48f6939fc5096e89fd22", HttpMethod.GET, entity, String.class);
+//         String result = response.getBody();
+// //convert result string into json object
+
+//  //use JSONObject to convert json to java object
+
+
+
+
+
+
+
+
+//         return  result;
+// //        ObjectMapper mapper = new ObjectMapper();
+// //        Article[] articles = null;
+// //        try {
+// //            articles = mapper.readValue(result, Article[].class);
+// //            System.out.println(articles);
+// //        } catch (Exception e) {
+// //            System.out.println(e);
+// //        }
+// //        List<Article> articleList = new ArrayList<Article>();
+// //        if (articles != null) {
+// //            for (Article article : articles) {
+// //                articleList.add(article);
+// //            }
+// //        }
+// //
+// //        return articleList;
+//     }
 
 }
